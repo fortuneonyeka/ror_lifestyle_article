@@ -5,18 +5,18 @@
 
   <ul class="nav navbar-nav articles-categories">
     <li class="nav-item"> <%= link_to 'Home', root_path %> </li>
-    <li class="nav-item"> <%= link_to 'New Category', categories_path %> </li>
+    <li class="nav-item"> <%= link_to 'New Category', new_category_path %> </li>
     <li class="nav-item"> <%= link_to 'New Article', new_article_path %> </li>
   </ul>
   <ul class="nav navbar-nav">
-    <% #if !current_user %>
+    <% if !current_user %>
     <li> <%= link_to 'Login', new_user_session_path %> </li>
       <li><a href="#">|</a></li>
       <li><%= link_to 'Register', new_user_registration_path %> </li>
-    <%# else %>
+    <% else %>
     
-      <li> <%#= link_to current_user.username, '#' %> </li>
+      <li> <%= link_to current_user.username, '#' %> </li>
       <li> <%= link_to 'Logout', destroy_user_session_path, method: 'DELETE'%> </li>
-    <%# end %>
+    <% end %>
   </ul>
 </nav>

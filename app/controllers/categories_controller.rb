@@ -43,7 +43,7 @@ class CategoriesController < ApplicationController
 
   def index
     @mva = Article.most_voted_article
-    # @categ = Category.includes(:latest_articles)
+    @categ = Category.includes(:latest_articles)
     @article = Article.all.order(created_at: :desc)
     @art = Article.all
   end

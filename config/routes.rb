@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # post 'categories/create'
   # get 'categories/update'
   # get 'categories/destroy'
-  root to: 'categories#index'
+  # root to: 'articles#index'
+  root 'categories#index'
   # get 'home/index'
   # root to: "home#index"
   resources :articles

@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
+  # before_action :require_login, only: %i[create new vote_for_article unvote_for_article]
   before_action :set_article, only: %i[ show edit update destroy ]
 
   # GET /articles or /articles.json
@@ -7,9 +8,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
-  # GET /articles/1 or /articles/1.json
-  def show
-  end
+  
 
   # GET /articles/new
   def new
@@ -25,6 +24,7 @@ class ArticlesController < ApplicationController
     # @article = Article.new(article_params)
     @article = Article.new(article_params)
     @article.author_id = current_user.id
+    @article.category_ids = params[:article][:category_ids]
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: "Article was successfully created." }
@@ -34,6 +34,11 @@ class ArticlesController < ApplicationController
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  # GET /articles/1 or /articles/1.json
+  def show
+    @article = Article.find(params[:id])
   end
 
   # PATCH/PUT /articles/1 or /articles/1.json
@@ -58,6 +63,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
