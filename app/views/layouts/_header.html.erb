@@ -1,0 +1,22 @@
+<nav class="main-nav">
+  <%= link_to root_path, class: 'navbar-brand' do %>
+    <h1 style="margin:0 ;color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;"><%#= image_tag('logo.jpg', style: 'width:50px')%> LuXuryLyF</h1>
+  <% end %>
+
+  <ul class="nav navbar-nav articles-categories">
+    <li class="nav-item"> <%= link_to 'Home', root_path %> </li>
+    <li class="nav-item"> <%= link_to 'New Category', categories_path %> </li>
+    <li class="nav-item"> <%= link_to 'New Article', new_article_path %> </li>
+  </ul>
+  <ul class="nav navbar-nav">
+    <% #if !current_user %>
+    <li> <%= link_to 'Login', new_user_session_path %> </li>
+      <li><a href="#">|</a></li>
+      <li><%= link_to 'Register', new_user_registration_path %> </li>
+    <%# else %>
+    
+      <li> <%#= link_to current_user.username, '#' %> </li>
+      <li> <%= link_to 'Logout', destroy_user_session_path, method: 'DELETE'%> </li>
+    <%# end %>
+  </ul>
+</nav>
