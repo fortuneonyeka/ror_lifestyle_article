@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_article, only: %i[ show edit update destroy ]
 
   # GET /articles or /articles.json
@@ -23,6 +24,7 @@ class ArticlesController < ApplicationController
   def create
     # @article = Article.new(article_params)
     @article = Article.new(article_params)
+    @article.author_id = current_user.id
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: "Article was successfully created." }
@@ -64,6 +66,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :body, :image)
+      params.require(:article).permit(:title, :body, :image, category_ids: [])
     end
 end

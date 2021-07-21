@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_21_095136) do
+ActiveRecord::Schema.define(version: 2021_07_21_111920) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -23,21 +23,34 @@ ActiveRecord::Schema.define(version: 2021_07_21_095136) do
     t.string "title"
     t.text "body"
     t.text "image_data"
+    t.integer "author_id", null: false
+    t.integer "vote_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "articlets", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.text "image_data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_articles_on_author_id"
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "priority"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
