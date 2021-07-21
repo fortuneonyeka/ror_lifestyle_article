@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :body
       t.text :image_data
-      t.integer :author_id
+      t.references :author, null: false, foreign_key: { to_table: :users }
       t.integer :vote_count, default: 0
 
       t.timestamps
