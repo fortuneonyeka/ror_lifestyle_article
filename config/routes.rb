@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'users/create'
+  get 'sessions/new'
   devise_for :users
   resources :categories
   # 

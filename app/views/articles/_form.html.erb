@@ -30,9 +30,13 @@
   <%= form.label :text,'Category' %>  <span>Select all that matches</span><br>
     <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
   </div>
-  <div class="field">
+  <%
+=begin%>
+ <div class="field">
     <%= form.hidden_field :author_id, value: current_user.id %>
-  </div>
+  </div> 
+<%
+=end%>
 
   <div class="actions">
     <%= form.submit %>

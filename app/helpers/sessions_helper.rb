@@ -1,17 +1,17 @@
 module SessionsHelper
-  # def login_user(user_id)
-  #   session[:user_id] = user_id
-  # end
+  def login_user(user_id)
+    session[:user_id] = user_id
+  end
 
   def image
     @mva ? @mva.image_url : ''
   end
 
-  # def current_user
-  #   return unless session[:user_id]
+  def current_user
+    return unless session[:user_id]
 
-  #   @current_user ||= User.find(session[:user_id])
-  # end
+    @current_user ||= User.find(session[:user_id])
+  end
 
   def body
     return @mva.title if @mva
@@ -21,10 +21,10 @@ module SessionsHelper
     return @mva.body if @mva
   end
 
-  # def logout_user
-  #   session.delete(:user_id)
-  #   @current_user = nil
-  # end
+  def logout_user
+    session.delete(:user_id)
+    @current_user = nil
+  end
 
   def vote_for_article
     @article = Article.find(params[:id])
@@ -40,9 +40,9 @@ module SessionsHelper
     end
   end
 
-  # def require_login
-  #   redirect_to login_path unless current_user
-  # end
+  def require_login
+    redirect_to login_path unless current_user
+  end
 
   def unvote_for_article
     @article = Article.find(params[:id])
@@ -58,9 +58,9 @@ module SessionsHelper
     end
   end
 
-  # def flashes
-  #   return flash[:errors] if flash[:errors]
-  # end
+  def flashes
+    return flash[:errors] if flash[:errors]
+  end
 
   def terms
     return image_tag @article.image_url if @article.image
