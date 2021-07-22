@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  include CategoriesHelper
   # before_action :require_login, only: %i[create new]
   before_action :set_category, only: %i[show edit update destroy]
 
