@@ -3,7 +3,6 @@ class CategoriesController < ApplicationController
   # before_action :require_login, only: %i[create new]
   before_action :set_category, only: %i[show edit update destroy]
 
-
   def new
     @category = Category.new
   end
@@ -40,7 +39,6 @@ class CategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
 
   def index
     @mva = Article.most_voted_article

@@ -1,16 +1,6 @@
 module SessionsHelper
-  def login_user(user_id)
-    session[:user_id] = user_id
-  end
-
   def image
     @mva ? @mva.image_url : ''
-  end
-
-  def current_user
-    return unless session[:user_id]
-
-    @current_user ||= User.find(session[:user_id])
   end
 
   def body
@@ -21,11 +11,6 @@ module SessionsHelper
     return @mva.body if @mva
   end
 
-  def logout_user
-    session.delete(:user_id)
-    @current_user = nil
-  end
-
   def vote_for_article
     @article = Article.find(params[:id])
     if @article
@@ -33,15 +18,11 @@ module SessionsHelper
       if @article.save
         redirect_to request.referer
       else
-        redirect_to login_path
+        redirect_to new_user_session_path
       end
     else
-      redirect_to signup_path
+      redirect_to new_user_registration_path
     end
-  end
-
-  def require_login
-    redirect_to login_path unless current_user
   end
 
   def unvote_for_article
@@ -51,15 +32,11 @@ module SessionsHelper
       if @article.save
         redirect_to request.referer
       else
-        redirect_to login_path
+        redirect_to new_user_session_path
       end
     else
-      redirect_to signup_path
+      redirect_to new_user_registration_path
     end
-  end
-
-  def flashes
-    return flash[:errors] if flash[:errors]
   end
 
   def terms

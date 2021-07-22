@@ -9,16 +9,13 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :categories
   has_many :users_voted, through: :votes, source: :user
 
-
   validates :title, presence: true
   validates :body, presence: true
   validate :categories_presence
+
   def categories_presence
-   if categories.empty?
-    errors.add(:categories, "need to be selected")
-   end
+    errors.add(:categories, 'need to be selected') if categories.empty?
   end
-  
 
   def self.most_voted_article
     Article.order(vote_count: :desc).first
@@ -43,5 +40,4 @@ class Article < ApplicationRecord
   def truncate_text
     body.length >= 200 ? "#{body[0..200]} ..." : "#{body} ..."
   end
-  
 end
