@@ -20,7 +20,7 @@
           <p>Votes</p>
             <% voted = current_user && art.user_voted?(current_user.id) %>
             <%= link_to voted ? unvotearticle_path(art.id) : votearticle_path(art.id), class:'vote-btn' do %>
-              <%= image_tag voted ? 'star.png': 'star (1).png' %>
+              <%= image_tag voted ? 'vote.png': 'vote.png' %>
             <% end %>
             <span><%= art.vote_count if art.vote_count && art.vote_count > 0 %></span>
           </div>
