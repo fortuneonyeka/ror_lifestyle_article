@@ -4,7 +4,7 @@ RSpec.feature 'Users', type: :system do
   describe 'Navigate the webpage' do
     it 'creates a new user and logs in' do
       visit new_user_registration_path
-      
+
       fill_in 'Username', with: 'user9'
       click_on 'Sign up'
       expect(page).to have_content('Welcome! You have signed up successfully.')

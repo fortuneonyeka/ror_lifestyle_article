@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) {User.new(username:'user1')}
+  let(:user) { User.new(username: 'user1') }
 
   describe 'validates user params' do
     it 'checks that the user is valid' do
       expect(user.valid?).to eql(true)
     end
     it 'validates if the username is present' do
-      username = 'user10'
+      user.username = 'user10'
       expect(user.valid?).to eql(true)
     end
     it 'validates if the usernames are unique' do
@@ -19,4 +19,3 @@ RSpec.describe User, type: :model do
     end
   end
 end
-  

@@ -20,7 +20,7 @@ RSpec.feature 'Articles', type: :system do
       click_on 'Sign up'
       click_link 'New Article'
       fill_in 'Title', with: 'Info Tech'
-      fill_in'Body', with: 'Internet of things'
+      fill_in 'Body', with: 'Internet of things'
       click_button 'Create Article'
 
       expect(page).to have_content('Internet of things')
