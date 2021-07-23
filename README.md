@@ -26,10 +26,13 @@ Check out the presentation video[here]()
 
 
 # Homepage
-![Homepage]()
+![Homepage](assets/images/LifeStyleArticleHomePage.png)
+
+# New Article's Page
+![New article](assets/images/NewArticlePage.png)
 
 # Article's Page
-![Articles]()
+![Articles](asstes/images/LifeStyleArticlePage.png)
 
 ### Prerequisites
 
