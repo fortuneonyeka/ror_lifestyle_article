@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_07_21_111920) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
     t.integer "category_id"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_07_21_111920) do
     t.string "title"
     t.text "body"
     t.text "image_data"
-    t.integer "author_id", null: false
+    t.bigint "author_id", null: false
     t.integer "vote_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,4 +58,5 @@ ActiveRecord::Schema.define(version: 2021_07_21_111920) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "articles", "users", column: "author_id"
 end
