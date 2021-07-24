@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 gem 'devise'
 
+
+gem 'figaro'
+gem 'launchy', '~> 2.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use sqlite3 as the database for Active Record
@@ -17,6 +20,7 @@ gem 'image_processing', '~> 1.2'
 gem 'sass-rails', '>= 6'
 gem 'shrine', '~> 3.4'
 gem 'shrine-cloudinary', '~> 1.1', '>= 1.1.1'
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -65,6 +69,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
 
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 4.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
