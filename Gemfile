@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 gem 'devise'
 
-
 gem 'figaro'
 gem 'launchy', '~> 2.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -15,12 +14,12 @@ gem 'pg'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass'
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'cloudinary'
 gem 'image_processing', '~> 1.2'
 gem 'sass-rails', '>= 6'
 gem 'shrine', '~> 3.4'
 gem 'shrine-cloudinary', '~> 1.1', '>= 1.1.1'
-gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
