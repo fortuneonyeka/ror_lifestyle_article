@@ -1,5 +1,5 @@
 # README
-Lifestyle App with Ruby on Rails
+Luxurylyf App with Ruby on Rails
 
 This is an article based app featuring article categories, article posts, article votes, it is the ultimate hangout for luxury enthusiasts.
 
@@ -19,10 +19,10 @@ This is an article based app featuring article categories, article posts, articl
 
 ## Live Demo
 
-Check the live version demo [here]()
+Check the live version demo [here](https://infinite-mesa-28355.herokuapp.com/)
 
 ## Presentation Video
-Check out the presentation video[here]()
+Check out the presentation video[here](https://www.loom.com/share/41a031006ba347d2a6dc2ddc516594d9)
 
 
 # Homepage
