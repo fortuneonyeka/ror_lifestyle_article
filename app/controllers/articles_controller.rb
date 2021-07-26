@@ -1,13 +1,11 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :correct_user, only: [:edit, :destroy, :update]
- 
- 
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :correct_user, only: %i[edit destroy update]
+
   def index
     @articles = Article.all
   end
 
-  
   def new
     @article = Article.new
   end
@@ -27,9 +25,7 @@ class ArticlesController < ApplicationController
     else
       render 'new', notice: "Article's body can not be empty"
     end
-    
   end
-
 
   # GET /articles/1 or /articles/1.json
   def show
@@ -57,13 +53,13 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
-    def correct_user
-      @article = current_user.articles.find_by(id: params[:id])
-      redirect_to articles_path, notice:"You can only delete or edit your own articles" if @article.nil?
-    end
+
+  def correct_user
+    @article = current_user.articles.find_by(id: params[:id])
+    redirect_to articles_path, notice: 'You can only delete or edit your own articles' if @article.nil?
+  end
+
   private
-
-
 
   # Use callbacks to share common setup or constraints between actions.
   def set_article
