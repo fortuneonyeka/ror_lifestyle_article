@@ -14,7 +14,7 @@ This is an article based app featuring article categories, article posts, articl
 
 ## Built With
 
-- Ruby v2.7.2
+- Ruby v2.7.0
 - Ruby on Rails v6.1.0
 
 ## Live Demo
@@ -35,8 +35,8 @@ Check out the presentation video[here](https://www.loom.com/share/4caa0c82a54741
 
 ### Prerequisites
 
-Ruby: 2.7.2
-Rails: 6.1.0
+Ruby: 2.7.0
+Rails 6.1.4
 Postgres: >=9.5
 
 ### Setup
@@ -71,7 +71,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rspec --format documentation
+    rspec
 ```
 
 ## Author
