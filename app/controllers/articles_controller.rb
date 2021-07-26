@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    # @article = Article.new(article_params)
     @article = Article.new(article_params)
     @article.author_id = current_user.id
     @article.category_ids = params[:article][:category_ids]
