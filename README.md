@@ -22,17 +22,16 @@ This is an article based app featuring article categories, article posts, articl
 Check the live version demo [here](https://infinite-mesa-28355.herokuapp.com/)
 
 ## Presentation Video
-Check out the presentation video[here](https://www.loom.com/share/41a031006ba347d2a6dc2ddc516594d9)
-
+Check out the presentation video[here](https://www.loom.com/share/4caa0c82a54741e0b6e5d8d9a323e741)
 
 # Homepage
-![Homepage](assets/images/LifeStyleArticleHomePage.png)
+![Homepage](docs/LifestyleArticle-homepage.png)
 
 # New Article's Page
-![New article](assets/images/NewArticlePage.png)
+![New article](docs/NewArticlePage.png)
 
 # Article's Page
-![Articles](asstes/images/LifeStyleArticlePage.png)
+![Articles](docs/LifeStyleArticlePage.png)
 
 ### Prerequisites
 
@@ -82,6 +81,10 @@ Open `http://localhost:3000/` in your browser.
 - GitHub [fortuneonyeka](https://github.com/fortuneonyeka)
 - Linkedin: [Fortunatus Ihedoro](https://www.linkedin.com/in/fortunatus-ihedoro/)
 
+
+## Credits
+
+Credit goes to [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) for this wonderful templete. This project is a clone of  [this](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version) design.
 
 
 ## 🤝 Contributing
