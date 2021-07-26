@@ -31,7 +31,7 @@ Check out the presentation video[here](https://www.loom.com/share/4caa0c82a54741
 ![New article](docs/NewArticlePage.png)
 
 # Article's Page
-![Articles](docs/LifeStyleArticlePage.png)
+![Articles](docs/LifestyleArticlePage.png)
 
 ### Prerequisites
 
