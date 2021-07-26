@@ -1,5 +1,6 @@
 <%= form_with(model: article, local: true) do |form| %>
-
+ <%= render 'shared/errors', article: @article%>
+ 
   <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title %>

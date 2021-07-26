@@ -11,6 +11,7 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
+  validates :image, presence: true
   validate :categories_presence
 
   def categories_presence
