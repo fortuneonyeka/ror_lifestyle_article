@@ -33,22 +33,35 @@ Check out the presentation video[here](https://www.loom.com/share/4caa0c82a54741
 # Article's Page
 ![Articles](docs/LifestyleArticlePage.png)
 
+## Getting Started
+
+To get a local copy up and running, please follow these steps:
+
 ### Prerequisites
 
 Ruby: 2.7.0
 Rails 6.1.4
 Postgres: >=9.5
 
+
 ### Setup
 
-Instal gems with:
+- Go to your terminal bash and, on any directory of your preference, run
 
+```sh
+git clone git@github.com:fortuneonyeka/ror_lifestyle_article.git
 ```
+- Next, to go into the project root directory, run
+cd ror_lifestyle_article
+
+- To install all Ruby Gems this project requires, run
+
+```sh
 bundle install
 ```
 
 ```
-bundle exec rake webpacker:install
+bundle exec rails webpacker:install
 ```
 
 Setup database with:
@@ -56,6 +69,12 @@ Setup database with:
 ```
    rails db:create
    rails db:migrate
+```
+
+- Optionally, you can load some record samples for Users, categories, and articles Tables. To do it, simply run
+
+```sh
+rails db:seed
 ```
 
 ### Usage
