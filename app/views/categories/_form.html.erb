@@ -1,0 +1,19 @@
+<%= form_with model: category, url:categories_path do |form| %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.number_field :priority %>
+  </div>
+
+  
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
