@@ -15,5 +15,23 @@
   <%= image_tag @article.image_url if @article.image %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+
+
+<div class="container-fluid">
+  <div class="article-wrapper">
+    <%= terms %>
+    <div class="info">
+      <h1 class="title"><%= @article.title%></h1>
+      <p class="description"><%= @article.body%></p>
+      <div class="footer-info">
+        <div class="author-info">
+          <span>Written by : <strong><%= @article.author.username %> </strong></span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to 'Back', articles_path %>  
+
+

@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RorLifestyleArticle</title>
+    <title>LifestyleArticle</title>
+    <link rel="icon" href="https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fyacht&psig=AOvVaw2YYxGYd1TdhWKuTDMIrsEu&ust=1626957110398000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJiij9eV9PECFQAAAAAdAAAAABAD" type="image/x-icon">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+   <%= render 'layouts/header'%>
     <%= yield %>
+    <%= render 'layouts/footer'%>
   </body>
 </html>
